@@ -1,0 +1,20 @@
+<h2>{{editMode ? 'Edit' : 'Add'}}</h2>
+<form nz-form nzLayout="vertical" [formGroup]="todoForm" (ngSubmit)="create()">
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired>Title:</nz-form-label>
+    <nz-form-control nzHasFeedback nzErrorTip="Please enter your title!">
+      <input nz-input formControlName="title" placeholder="Enter your title"/>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired>details:</nz-form-label>
+    <nz-form-control nzHasFeedback nzErrorTip="Please enter your details!">
+      <input nz-input formControlName="details" placeholder="Enter your details"/>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-control>
+      <button nz-button [disabled]="todoForm.invalid" nzType="primary">{{editMode ? 'Edit Plan' : 'Add Plan'}}</button>
+    </nz-form-control>
+  </nz-form-item>
+</form>
